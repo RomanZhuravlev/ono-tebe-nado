@@ -82,7 +82,7 @@ body {
 	position: relative;
 	min-width: auto;
 	min-height: auto;
-	background-image: url(/images/cover.jpg);
+	background-image: url(../images/cover.jpg);
 	background-size: cover;
 	margin-bottom: 180px;
 	z-index: -2;

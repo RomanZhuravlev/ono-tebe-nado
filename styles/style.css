@@ -1,11 +1,8 @@
-body {
-	width: 1440px;
-	background-color: #FFF;
-}
+/* начало блока header */
 
 .header {
-	display: flex;
-	justify-content: flex-start;
+	display: grid;
+	grid-template-columns: 1fr min-content 1fr;
 	margin: 92px 50px;
 	flex-shrink: 0;
 	background-color: #FFF;
@@ -15,10 +12,8 @@ body {
 	display: flex;
 	align-self: center;
 	list-style: circle;
-	margin-right: 209px;
 	margin-top: 43px;
 	margin-bottom: 45px;
-	font-family: "Raleway";
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 400;
@@ -28,7 +23,6 @@ body {
 .header__links-list-item {
 	margin-right: 32px;
 	color: #000;
-	white-space: nowrap;
 }
 
 .header__links-list-item_no-bullit {
@@ -44,7 +38,7 @@ body {
 	text-decoration: none;
 }
 
-.no-right-margin-item {
+.header__links-list-item:last-child {
 	margin-right: 0;
 }
 
@@ -53,7 +47,6 @@ body {
 	width: 148px;
 	height: 105px;
 	flex-shrink: 0;
-	margin-right: 355px;
 }
 
 .header__logo-image {
@@ -62,10 +55,8 @@ body {
 
 .address {
 	width: 240px;
-	height: 97px;
 	flex-shrink: 0;
 	color: #000;
-	font-family: "Raleway";
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 400;
@@ -78,14 +69,19 @@ body {
 	margin-bottom: 7px;
 }
 
+/* конец блока header */
+
+/* начало блока cover */
+
 .cover {
 	position: relative;
 	min-width: auto;
 	min-height: auto;
 	background-image: url(../images/cover.jpg);
+	background-position: center;
 	background-size: cover;
 	margin-bottom: 180px;
-	z-index: -2;
+	z-index: 1;
 }
 
 .overlay {
@@ -97,12 +93,11 @@ body {
 
 .cover__title {
 	color: #FFF;
-	font-family: "Raleway";
 	font-size: 100px;
 	font-style: normal;
 	font-weight: 700;
 	line-height: 115%; /* 115px */
-	letter-spacing: 30px;
+	letter-spacing: 0.3em;
 	text-transform: uppercase;
 	padding: 165px 50px 0 50px;
 }
@@ -122,7 +117,7 @@ body {
 }
 
 .letter-spacing-extended {
-	letter-spacing: 60px;
+	letter-spacing: 0.6em;
 }
 
 .no-letter-spacing {
@@ -130,19 +125,19 @@ body {
 }
 
 .cover__description {
-	display: flex;
+	display: grid;
+	grid-template-columns: 73% 1fr;
 }
 
 .cover__description-text {
+	justify-self: end;
 	color: #FFF;
 	text-align: center;
-	font-family: "Raleway";
 	font-size: 22px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 28px; /* 127.273% */
 	text-transform: uppercase;
-	margin-left: 422px;
 	margin-bottom: 62px;
 	margin-top: 136px;
 	word-spacing: 17px;
@@ -157,27 +152,28 @@ body {
 	margin-left: auto;
 	color: #FFF;
 	text-align: center;
-	font-family: "Raleway";
 	font-size: 22px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
 	text-transform: uppercase;
 	border-style: solid;
-	border-color: #FFF;
-	border-width: 2px 0;
+	border-color: currentColor;
+	border-width: 1px;
 }
+
+/* конец блока cover */
+
+/* начало блока lots */
 
 .lots {
 	padding-left: 50px;
 	padding-right: 50px;
-	min-height: 579px;
 }
 
 .lots__heading {
 	margin: 0 auto 27px 40px;
 	color: #000;
-	font-family: "Raleway";
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 700;
@@ -188,6 +184,7 @@ body {
 .lots__card-list {
 	display: flex;
 	gap: 25px;
+	flex-wrap: wrap;
 	list-style: none;
 }
 
@@ -210,7 +207,8 @@ body {
 	height: 100%;
 	width: 430px;
 	background-size: cover;
-	z-index: -2;
+	background-position: center;
+	z-index: 1;
 }
 
 .card_type_film {
@@ -227,7 +225,6 @@ body {
 
 .card__title {
 	color: #FFF;
-	font-family: "Raleway";
 	font-size: 22px;
 	font-style: normal;
 	font-weight: 700;
@@ -239,7 +236,6 @@ body {
 
 .card__text {
 	color: #FFF;
-	font-family: "Raleway";
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 400;
@@ -248,10 +244,9 @@ body {
 }
 
 .lots__look-more-link {
-	display: inline-block;
+	display: block;
 	margin: 30px auto 2px 40px;
 	color: #000;
-	font-family: "Raleway";
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 400;
@@ -260,11 +255,14 @@ body {
 	text-underline-offset: 5px;
 }
 
+/* конец блока lots */
+
+/* начало блока about */
+
 .about {
 	display: flex;
 	gap: 25px;
 	margin: 181px 50px 180px;
-	min-height: 487px;
 }
 
 .about__logo {
@@ -288,7 +286,6 @@ body {
 
 .about__title {
 	color: #000;
-	font-family: "Raleway";
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 700;
@@ -298,16 +295,23 @@ body {
 
 .about__text {
 	color: #000;
-	font-family: "Raleway";
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
 }
 
-.about__first-paragraph {
+.about__paragraph {
 	margin-bottom: 25px;
 }
+
+.about__paragraph:last-child {
+	margin-bottom: 0;
+}
+
+/* конец блока about */
+
+/* начало блока footer */
 
 .footer {
 	margin: 0 50px 90px;
@@ -323,16 +327,17 @@ body {
 .footer__menu-list-item {
 	color: #000;
 	text-align: center;
-	font-family: "Raleway";
-	font-size: 17px;
+	font-size: 18px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 22px;
+	text-decoration: none;
 }
 
 .footer__menu-link {
-	text-decoration: underline;
-	text-underline-offset: 5px;
+	text-decoration: none;
+	text-decoration-line: underline;
+	text-underline-offset: 4px;
 }
 
 .footer__menu-link_active {
@@ -342,11 +347,11 @@ body {
 .footer__social-list {
 	display: flex;
 	justify-content: space-between;
-	height: 48px;
-	width: 240px;
+	gap: 48px;
 	list-style: none;
 }
 
 .footer__social-icon {
 	width: 48px;
+	height: 48px;
 }
